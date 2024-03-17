@@ -5,6 +5,8 @@ require("dotenv").config();
 const PORT = process.env.PORT || 4000;
 
 app.use(express.json());
+const cookieParser = require("cookie-parser");
+app.use(cookieParser());
 
 const user = require("./routes/User");
 app.use("/api/v1",user);
